@@ -1,0 +1,47 @@
+
+const express = require('express');
+const app = express();
+const port = 5010;
+
+//define the APIs , GET API for product
+app.get('/product', (req, res) => {
+     res.send(" Welcome to the Product Page!")
+ });
+
+//  app.post("/product/Computer", (req, res) => {
+//     res.send(" ComputerProduct added successfully!")
+// });
+
+//  app.post("/product/Mobile", (req, res) => {
+//      res.send("Mobile Product added successfully!")
+//  });
+
+
+//  app.put("/product/Mobile", (req, res) => {
+//     res.send("Product updated successfully!")
+// });
+
+// app.delete("/product/Mobile", (req, res) => {
+//     res.send("Product deleted successfully!")
+// });
+
+var currentDate = function( req, res, next){
+    req.currentDate = new Date();
+    next()
+}
+
+app.use(currentDate)
+
+app.get("/getRemainingDays", (req, res) =>{
+    const Difference = new Date("2022-01-01") -new Date();
+    const days= { Days: Math.floor(Difference/(1000*60*60*24)), ReqeustTime: req.currentDate};
+    res.json(days)
+})
+
+
+ // starting a webserver on port 5000
+app.listen(port, () => { 
+
+    // Everthing started file
+    console.log(`Example app listening at http://localhost:${port}`)
+ })

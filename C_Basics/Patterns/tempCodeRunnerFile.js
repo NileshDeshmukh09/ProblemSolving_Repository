@@ -1,0 +1,3 @@
+/  while(stars <=row ){
+    //      result = 
+    //  }
