@@ -1,0 +1,1 @@
+{"name":"Local: NextGreaterElement","url":"d:\\DataStructures\\NextGreaterElement.cpp","tests":[{"id":1648304847779,"input":"3\n4 1 2\n4\n1 3 4 2","output":"-1 3 -1"},{"id":1648307371699,"input":"2 \n2 4\n4\n1 2 3 4","output":"3 -1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DataStructures\\NextGreaterElement.cpp","group":"local","local":true}
