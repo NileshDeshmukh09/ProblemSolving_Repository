@@ -1,0 +1,73 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+/**
+Example 1:
+
+    Input: nums = [3,0,1]
+    Output: 2
+    Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+
+Example 2:
+
+    Input: nums = [0,1]
+    Output: 2
+    Explanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
+
+Example 3:
+
+    Input: nums = [9,6,4,2,3,5,7,0,1]
+    Output: 8
+    Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
+
+*/
+
+class Solution
+{
+public:
+    int missingNumber(vector<int> &nums)
+    {
+        int sum = 0;
+        int n = nums.size();
+
+        for (int i = 0; i < n; i++)
+        {
+            sum = sum + nums[i];
+        }
+
+        // TotalSum of the length of the Array !
+        int totalSum = n * (n + 1) / 2;
+
+        cout << "Missing Number is : " << endl;
+        return totalSum - sum;
+    }
+};
+
+int main()
+{
+    int T;
+    cout << "Enter TestCases :";
+    cin >> T;
+
+    while (T > 0)
+    {
+        int N;
+        cout << "\nEnter N :";
+        cin >> N;
+
+        vector<int> nums;
+        cout << "Enter Element of Array :" << endl;
+        for (int i = 0; i < N; i++)
+        {
+            int val;
+            cin >> val;
+            nums.push_back(val);
+        }
+        Solution sol;
+        cout << sol.missingNumber(nums);
+        T--;
+    }
+
+    return 0;
+}
