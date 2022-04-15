@@ -1,0 +1,1 @@
+{"name":"Local: lastStoneWeight","url":"d:\\DataStructures\\lastStoneWeight.cpp","tests":[{"id":1649378603613,"input":"2\n6 \n2 7 4 1 8 1\n1\n1","output":"1\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DataStructures\\lastStoneWeight.cpp","group":"local","local":true}
