@@ -19,6 +19,7 @@ public:
                 return true;
             }
         }
+        cout << endl;
         return false;
     }
 };
