@@ -12,39 +12,40 @@
 
 #include<iostream>
 #include<unordered_map>
+#include<map>
 #include<vector>
 using namespace std;
 
-vector< int > maxTwiceElement(vector<int> arr , int n ){
-    unordered_map < int , int > mp;
+vector< int > reduceArray(vector<int> arr , int n ){
+    int j = 0;
+    for(int i = 0; i < n; i++){
 
-    for(int i = 0;  i < n; i++){
-        mp[arr[i]]++;
-    }
-
-    for(auto i : mp){
-        if(i.second > 2){
-            arr.push_back(i.first);
-            arr.push_back(i.first);
+        if(i < n-2  && arr[i] == arr[i+2] && arr[i] == arr[i+1]){
+            cout << "if : " << arr[i] << " ";
+            continue;
         }else{
-            arr.push_back(i.first);
+            arr[j] = arr[i];
+            cout << "else : "<< arr[i] << " ";
+            j++;
         }
+        cout << endl;
+        
     }
-     for(int i = 0;  i < n; i++){
-       cout << arr[i] << " ";
+
+    for(int  i = 0; i < j; i++){
+        cout << arr[i] << " ";
     }
-    cout << endl;
 
     return arr;
 };
 
 int main(){
 
-    vector <int> arr= { 1,2,2,3,3,3,4,4,6 };
+    vector <int> arr= { 1,2,2,2,3,3,3,4,4,6 };
 
     int n =arr.size();
     cout << "Size of Array : " << n << endl;
 
-    maxTwiceElement(arr, n);  
+    reduceArray(arr, n);  
     return 0;
 }
