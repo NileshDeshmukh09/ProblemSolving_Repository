@@ -1,0 +1,22 @@
+Time Complexity : 
+
+1. What logic you wrote.
+2. python me likha
+
+
+HOw the No. of Opereation is propotional to the Input size.
+
+
+TC
+Recurssion
+Array 
+Sorting (BUbble ,selection , Merging ,quick )
+Searching,
+Selection (Medians , selection )
+LinkedList
+stack
+queue
+TRee ( BinaryTree , AVL , BST, RedBlack Tree ) 
+Priority Queue
+
+
