@@ -37,7 +37,7 @@ int main(){
 
 /**
  *  2.  Approach Two :
- * Time Complexity : log(n) , spaceComplexity
+ * Time Complexity : log(n) , spaceComplexity : o(n);
 */
 
 int pow(int x , int n ){
