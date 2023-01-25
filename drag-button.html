@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container1"
+        style="background-color: rgb(60, 186, 123); width: 300px; height: 300px; border: 1px solid black;">
+        <button id="dragme" style="position: absolute;">Drag Me</button>
+
+    </div><br>
+    <div id="container2"
+        style="background-color: rgb(61, 114, 184); width: 300px; height: 300px; border: 1px solid black;"></div>
+
+
+
+    <script>
+        var button = document.getElementById("dragme");
+        var container1 = document.getElementById("container1");
+        var container2 = document.getElementById("container2");
+
+        //    var button = document.getElementById("myButton");
+        button.addEventListener("click", function () {
+            alert("Button was clicked!");
+        });
+
+
+
+
+        // make the button draggable
+//         button.addEventListener("mousedown", function (e) {
+//             e.preventDefault();
+//             button.style.position = "absolute";
+//             button.style.zIndex = 1000;
+//             document.body.append(button);
+
+//             var pos1 = e.clientX;
+//             var pos2 = e.clientY;
+//             var pos3 = e.clientX;
+//             var pos4 = e.clientY;
+
+//             console.log( pos1 , pos2 , pos3 , pos4 );
+
+//             document.onmouseup = function () {
+//                 document.onmousemove = null;
+//             };
+
+//             document.onmousemove = function (e) {
+//                 pos1 = pos3 - e.clientX;
+//                 pos2 = pos4 - e.clientY;
+//                 pos3 = e.clientX;
+//                 pos4 = e.clientY;
+//                 button.style.top = button.offsetTop - pos2 + "px";
+//                 button.style.left = button.offsetLeft - pos1 + "px";
+//             };
+//         });
+// // 
+        // // check if the button is inside one of the containers
+        button.addEventListener("mouseup", function (e) {
+            if (container1.contains(button)) {
+                alert("Button is inside container 1!");
+            } else if (container2.contains(button)) {
+                alert("Button is inside container 2!");
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

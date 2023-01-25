@@ -31,5 +31,8 @@ function flattenObj( obj ){
 
     return res;
 }
+console.log.call(this , "val :")
+
+console.log(1)
 
 console.log( flattenObj(obj) );

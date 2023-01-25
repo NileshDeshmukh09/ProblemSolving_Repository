@@ -17,7 +17,7 @@ const filterArr = arr.filter(val =>{
     const isDuplicate = set.has( val.id );
 
     set.add( val.id );
-    console.log(set);
+    // console.log(set);
     return !isDuplicate;
 })
 

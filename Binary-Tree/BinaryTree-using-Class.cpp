@@ -1,5 +1,7 @@
 #include <iostream>
 #include <queue>
+#include <stack>
+#include<vector>
 using namespace std;
 
 class Node
@@ -47,7 +49,7 @@ void levelOrderTraversal(Node *root)
     while (!q.empty())
     {
         Node *temp = q.front();
-        q.pop();
+        q.pop(); 
 
         // purane level complete traverse ho chuke hai
         if (temp == NULL){
@@ -67,6 +69,30 @@ void levelOrderTraversal(Node *root)
         }
     }
 };
+
+vector<int> iterativePreorder( Node* root ){
+
+   vector<int>preOrder;
+    if( root == NULL )
+        return preOrder;
+    
+    stack<Node*> st;
+    st.push( root );
+
+    while( !st.empty() ){
+        root = st.top();
+        st.pop();
+
+        preOrder.push_back( root -> data );
+        if( root -> right != NULL ) st.push( root -> right );
+        if( root -> left != NULL) st.push( root -> left );
+
+    }
+    return preOrder;
+
+}
+
+
 int main()
 {
 
@@ -75,6 +101,16 @@ int main()
     cout << "Level order Traversal of data : "<< endl;
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1 
     levelOrderTraversal(root);
+
+     vector<int>preOrder;
+     vector<int>ans;
+
+     ans =  iterativePreorder( root );
+
+    for( int i= 0 ; i< ans.size() ; i++ ){
+        cout << ans[i]<< " ";
+    }
+    
 
     return 0;
 }

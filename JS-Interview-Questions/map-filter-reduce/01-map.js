@@ -42,7 +42,7 @@ const input03 = "George Raymond Richard Martin";
 
 const getInitials = input03.split(" ").map( val => val[0]).join("");
 
-console.log( getInitials );
+console.log( "GetIntials : ", getInitials );
 
 // ----------------
 
